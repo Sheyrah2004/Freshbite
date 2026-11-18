@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Request a table at FreshBite, Bugema University Small Gate. Monday–Friday, 08:00–22:00. Availability is confirmed by email.">
+  <meta name="theme-color" content="#999c68">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Book a Table — FreshBite">
+  <meta property="og:description" content="Request a table at FreshBite, Bugema University Small Gate. Monday–Friday, 08:00–22:00. Availability is confirmed by email.">
+  <meta property="og:image" content="images/hero.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Book a Table — FreshBite</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 97'%3E%3Cpath fill='%23999c68' d='M92 75c0-12.15 9.85-22 22-22h22v22c0 12.15-9.85 22-22 22H92V75Z'/%3E%3Cpath fill='%23999c68' d='M136 31c0-12.15 9.85-22 22-22h22v22c0 12.15-9.85 22-22 22h-22V31Z'/%3E%3Cpath fill='%23999c68' d='M88 75c0-12.15-9.85-22-22-22H44v22c0 12.15 9.85 22 22 22h22V75Z'/%3E%3Cpath fill='%23999c68' d='M44 31c0-12.15-9.85-22-22-22H0v22c0 12.15 9.85 22 22 22h22V31Z'/%3E%3Cpath fill='%23999c68' d='M74.556 46.67c-8.591-8.592-8.591-22.522 0-31.113L90.113 0l15.556 15.556c8.592 8.591 8.592 22.521 0 31.113L90.113 62.226 74.556 46.67Z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/freshbite.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="topnav" id="myTopnav" aria-label="Main navigation">
+    <div class="nav-top-row">
+      <a class="nav-directions" href="https://www.google.com/maps/search/?api=1&amp;query=Bugema+University+Small+Gate+Uganda" target="_blank" rel="noopener noreferrer" aria-label="Get directions to FreshBite"><span>GET DIRECTIONS </span>↗</a>
+      <a class="logo" href="index.html" aria-label="FreshBite home">FRESHBITE</a>
+      <button class="nav-hamburger" id="navHamburger" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">HOME</a>
+      <a href="menu.html">MENU</a>
+      <a href="index.html#gallery">GALLERY</a>
+      <a href="book-a-table.html" class="active" aria-current="page">BOOK</a>
+      <a href="about.html">ABOUT</a>
+    </div>
+  </nav>
+  <main id="main">
+    <header class="booking-header" id="heroSection"><h1>BOOK A TABLE</h1><p>Monday–Friday · 08:00–22:00 · East Africa Time</p><p>Send your request by email. We’ll reply to confirm availability.</p></header>
+    <form id="bookingForm" class="freshbite-booking" action="mailto:booking@freshbites.com" method="post" enctype="text/plain">
+      <div class="booking-controls guest-controls"><div class="booking-field"><label for="name">Name</label><input type="text" id="name" name="name" autocomplete="name" maxlength="100" required></div><div class="booking-field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" maxlength="254" required></div></div>
+      <div class="booking-controls"><div class="booking-field"><label for="party-size">Party size</label><select id="party-size" name="people" required><option value="" selected disabled>Select guests</option><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option><option value="8">8 guests</option><option value="9">9 guests</option><option value="10">10 guests</option><option value="11">11 guests</option><option value="12">12 guests</option></select></div><div class="booking-field"><label for="date">Date</label><input type="date" id="date" name="date" aria-describedby="date-hint" required><small id="date-hint">Choose a weekday.</small></div><div class="booking-field"><label for="time">Time</label><select id="time" name="preferred-time" required disabled><option value="">Choose a date first</option></select></div></div>
+      <input type="hidden" id="selected-dish" name="dish"><p class="selected-dish" id="selected-dish-note" hidden></p>
+      <fieldset id="preferred-times" class="preferred-times" disabled><legend>Preferred time · East Africa Time</legend><p class="slot-hint" id="slot-hint">Choose a date to see service times.</p><div class="time-grid" id="time-grid"></div></fieldset>
+      <button type="submit" class="book-btn">REQUEST A TABLE</button>
+      <p class="booking-help">Your email app will open with a draft. Send it to request your table. A reply from FreshBite confirms the booking.</p><p id="booking-feedback" class="booking-feedback" role="status" aria-live="polite" hidden></p>
+    </form>
+    <dialog class="form-popup" id="myForm" aria-labelledby="request-dialog-title"><div class="form-container"><h2 id="request-dialog-title">Send your booking request</h2><p>Send the draft from your email app to<br><strong>booking@freshbites.com</strong>.<br>Your table is reserved after FreshBite confirms by email.</p><p><a id="request-email-link" href="mailto:booking@freshbites.com">OPEN EMAIL DRAFT</a></p><button type="button" class="btn cancel">CLOSE</button></div></dialog>
+    <noscript><p class="booking-help">Email booking@freshbites.com with your name, contact email, date, time and party size to request a table.</p></noscript>
+    <p class="group-booking">More than 12 guests? <a href="mailto:booking@freshbites.com?subject=FreshBite%20group%20booking">Email booking@freshbites.com</a>.</p>
+  </main>
+  <footer class="footer">
+    <div class="footer-logo">
+      <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 180 97" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path fill="#000" d="M92 75c0-12.15 9.85-22 22-22h22v22c0 12.15-9.85 22-22 22H92V75Z"/>
+        <path fill="#000" d="M136 31c0-12.15 9.85-22 22-22h22v22c0 12.15-9.85 22-22 22h-22V31Z"/>
+        <path fill="#000" d="M88 75c0-12.15-9.85-22-22-22H44v22c0 12.15 9.85 22 22 22h22V75Z"/>
+        <path fill="#000" d="M44 31c0-12.15-9.85-22-22-22H0v22c0 12.15 9.85 22 22 22h22V31Z"/>
+        <path fill="#000" d="M74.556 46.67c-8.591-8.592-8.591-22.522 0-31.113L90.113 0l15.556 15.556c8.592 8.591 8.592 22.521 0 31.113L90.113 62.226 74.556 46.67Z"/>
+      </svg>
+    </div>
+    <div class="footer-box">
+      <div class="footer-box1"><p>UGANDAN RESTAURANT</p><b>FRESHBITE</b><p class="footer-since">Open since 2018</p></div>
+      <div class="footer-box2">Bugema University Small Gate<br>Monday–Friday: 08:00–22:00<br><a href="mailto:booking@freshbites.com">booking@freshbites.com</a><br><a class="footer-directions" href="https://www.google.com/maps/search/?api=1&amp;query=Bugema+University+Small+Gate+Uganda" target="_blank" rel="noopener noreferrer">GET DIRECTIONS ↗</a></div>
+      <div class="footer-box3"><a href="index.html">HOME</a><a href="menu.html">MENU</a><a href="index.html#gallery">GALLERY</a><a href="book-a-table.html">BOOK A TABLE</a><a href="about.html">ABOUT</a><a role="link" aria-disabled="true">INSTAGRAM</a><a role="link" aria-disabled="true">FACEBOOK</a><a href="information.html#privacy">PRIVACY</a><a href="information.html#terms">TERMS</a></div>
+    </div>
+    <div class="footer-map"><iframe title="Map of Bugema University Small Gate, Uganda" src="https://maps.google.com/maps?q=Bugema%20University%20Small%20Gate%20Uganda&amp;z=15&amp;output=embed" width="1200" height="240" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+    <p class="dietary-notice">Please tell us about allergies before ordering. Dietary labels are a guide; preparation areas may be shared. Food images are illustrative.</p>
+    <p>© <span data-year>2026</span> FreshBite</p>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/menu-data.js"></script>
+  <script src="js/booktable.js"></script>
+</body>
+</html>
