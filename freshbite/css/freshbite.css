@@ -1,0 +1,96 @@
+/* FreshBite content and functional controls. Original template styling is in style.css. */
+:root { --nav-height: 132px; }
+html { scroll-padding-top: calc(var(--nav-height) + 20px); }
+#heroSection { margin-top: var(--nav-height); }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid var(--black); outline-offset: 5px; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; top: 12px; left: 16px; z-index: 2000; padding: 12px 20px; background: var(--white); transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+.nav-directions { position: absolute; left: 24px; font-size: 10px; font-weight: 700; letter-spacing: 1px; padding-block: 12px; }
+.nav-hamburger { width: 44px; height: 44px; }
+.hero-sub { margin-left: auto; }
+.hero-ctas { justify-content: flex-end; }
+.hero :focus-visible { outline-color: var(--white); }
+.dish-copy { flex: 1; min-width: 0; }
+.dish-copy > .dish-name { font-size: 14px; }
+.dish-name a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.dish-copy > p { font-size: 12px; line-height: 1.65; color: #505050; margin-top: 4px; }
+.dish-tags { display: inline-block; font-size: 10px; margin-top: 6px; color: #494927; }
+.dish-price { font-size: 12px; }
+.category-book, .plain-link { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; border-bottom: 2px solid var(--black); padding-block: 12px 4px; margin-top: 16px; }
+.menu-controls { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding-block: 16px; border-block: 1px solid #0003; }
+.dietary-filters { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.dietary-filters button { background: none; color: var(--black); padding-block: 10px; border: 0; border-bottom: 2px solid transparent; font-size: 11px; letter-spacing: 1px; min-height: 44px; }
+.dietary-filters button[aria-pressed='true'] { color: #4a4a27; border-bottom-color: #4a4a27; font-weight: 700; }
+.menu-search input { background: none; border: 0; border-bottom: 1px solid var(--black); border-radius: 0; color: var(--black); padding-block: 10px; width: 100%; font-size: 14px; }
+.menu-status { font-size: 12px; color: #505050; margin: 18px 0 28px; }
+.empty-menu { padding-block: 36px; }
+.empty-menu p { margin-bottom: 20px; }
+.empty-menu button { background: none; border: 0; border-bottom: 2px solid var(--black); padding: 10px 0; font-weight: 700; font-size: 12px; letter-spacing: 1px; }
+.gallery-caption { padding: 0 clamp(20px, 5vw, 60px) 20px; font-size: 12px; line-height: 1.8; }
+.gallery-status { margin-top: 32px; font-size: 12px !important; }
+.text-name > h1 { font: inherit; }
+.text-name { overflow-wrap: anywhere; }
+.dish-page .text-name { font-size: clamp(36px, 5.5vw, 72px); }
+.contact-email { font-size: 13px !important; letter-spacing: 0 !important; overflow-wrap: anywhere; }
+.detail-price { font-size: 26px !important; color: var(--black); font-weight: 700; }
+.detail-tags { font-size: 13px !important; }
+.dish-photo { padding: 0 clamp(24px, 6vw, 72px) clamp(36px, 5vw, 80px); }
+.dish-photo img { width: 100%; max-height: 640px; object-fit: cover; }
+.booking-header > p { font-size: 14px; line-height: 1.8; margin-top: 16px; }
+.booking-field input[type='text'], .booking-field input[type='email'] { width: 100%; border: 0; border-bottom: 2px solid var(--black); border-radius: 0; background: transparent; color: var(--black); font: inherit; padding: 10px 4px; }
+.booking-field small { font-size: 11px; color: #505050; line-height: 1.7; }
+.selected-dish { margin: 8px clamp(16px, 5vw, 64px) 24px; font-size: 13px; }
+.preferred-times { border: 0; padding: 12px 0 0; margin: 20px 0 0; min-width: 0; }
+.preferred-times > legend, .slot-hint { padding-inline: clamp(16px, 5vw, 64px); font-size: 13px; margin-bottom: 16px; }
+.slot-option { position: relative; }
+.slot-option > input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.slot-option > .time-slot { display: block; }
+.slot-option > input:checked + .time-slot { background: var(--accent-dark); color: var(--white); border-color: var(--accent-dark); }
+.slot-option > input:focus-visible + .time-slot { outline: 3px solid var(--accent-dark); outline-offset: 4px; }
+.booking-help, .booking-feedback { margin: 0 clamp(16px, 5vw, 64px) 24px; font-size: 13px; line-height: 1.9; }
+.booking-feedback a, .group-booking a { text-decoration: underline; text-underline-offset: 3px; }
+.group-booking { padding: 0 clamp(16px, 5vw, 64px) 44px; text-align: center; font-size: 13px; line-height: 1.8; overflow-wrap: anywhere; }
+.form-popup[open] { display: flex; width: 100%; height: 100%; max-width: none; max-height: none; border: 0; padding: 0; }
+.form-popup::backdrop { background: transparent; }
+.form-container > h2 { font-family: var(--font-display); font-size: clamp(20px, 4vw, 26px); font-weight: 700; line-height: 1.3; margin-bottom: 16px; }
+.form-container > p > a { text-decoration: underline; }
+.footer-box1 .footer-since { margin-top: 14px; font-size: 12px; letter-spacing: 0; }
+.footer-directions { display: inline-block; font-size: 11px; letter-spacing: 1px; border-bottom: 1px solid currentColor; margin-top: 12px; }
+.footer-map iframe { width: 100%; height: 220px; border: 0; display: block; }
+.footer .dietary-notice { font-size: 11px; line-height: 1.8; padding-top: 20px; }
+.footer > p:last-child { color: #161616; font-size: 10px; line-height: 1.8; }
+.footer > p:last-child a { text-decoration: underline; text-underline-offset: 3px; }
+.footer-box3 a:hover { color: var(--black); text-decoration: underline; text-underline-offset: 4px; }
+#privacy > h2, #terms > h2 { font-family: var(--font-display); font-size: 28px; margin-bottom: 16px; }
+#terms { margin-top: 36px; }
+@media (max-width: 768px) {
+  :root { --nav-height: 64px; }
+  .nav-directions { left: 16px; font-size: 18px; }
+  .nav-directions > span { display: none; }
+  .nav-hamburger { right: 12px; }
+  .menu-search input, .booking-field input, .booking-field select { font-size: 16px !important; }
+}
+@media (max-width: 560px) {
+  .hero-inner { max-width: calc(100vw - 48px); right: 24px; }
+  .hero-sub { font-size: 14px; }
+  .hero-ctas { gap: 12px; }
+  .btn-primary, .btn-ghost { padding: 14px 18px; font-size: 10px; letter-spacing: 1.5px; }
+  .menu-controls { align-items: stretch; gap: 16px; }
+  .dietary-filters { justify-content: space-between; width: 100%; gap: 8px; }
+  .dietary-filters button { font-size: 10px; letter-spacing: .5px; }
+  .menu-search { width: 100%; }
+  .dish-price { font-size: 11px; }
+  .text-content, .text-content2 { min-width: 0; width: 100%; }
+  .text-pra { min-width: 0; width: 100%; }
+  .text-name { min-width: 0; }
+  .booking-controls.guest-controls { flex-direction: column; align-items: stretch; }
+  .guest-controls .booking-field { max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
